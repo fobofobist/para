@@ -18,7 +18,7 @@ def reply_to_tweets():
     tweets = tweepy.Cursor(api.search_tweets, q=keyword, lang="en").items(10)
     for tweet in tweets:
         try:
-            reply_text = f"Hey @{tweet.user.screen_name}, here is a reply to your tweet!"
+            reply_text = f"@{tweet.user.screen_name} https://ay.live/1Kpa!"
             api.update_status(reply_text, in_reply_to_status_id=tweet.id)
             print(f"Replied to: {tweet.user.screen_name}")
         except tweepy.TweepError as e:
